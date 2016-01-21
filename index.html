@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 버블링 학습</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script>
+        window.onload = function(){
+
+            var toggleBg = function(e){
+                var phases = ['capturing', 'target', 'bubbling'];
+                var phase = phases[event.eventPhase-1];
+                console.log(phase);
+                var self = this;
+                switch (phase){
+                    case 'capturing':
+                        setTimeout(function(){
+                            self.style.backgroundColor = 'red';
+                        },100);
+                        break;
+                    case 'bubbling':
+                        setTimeout(function(){
+                            self.style.backgroundColor = 'green';
+                        },500);
+                        break;
+                }
+            };
+
+            document.getElementById('box1').addEventListener('click',toggleBg,true);
+
+            document.getElementById('box1').addEventListener('click',toggleBg);
+
+            document.getElementById('box2').addEventListener('click',toggleBg,true);
+
+            document.getElementById('box2').addEventListener('click',toggleBg);
+
+            document.getElementById('box3').addEventListener('click',toggleBg,true);
+
+            document.getElementById('box3').addEventListener('click',toggleBg);
+
+            document.getElementById('box4').addEventListener('click',toggleBg,true);
+
+            document.getElementById('box4').addEventListener('click',toggleBg);
+
+            document.getElementById('box5').addEventListener('click',toggleBg,true);
+
+            document.getElementById('box5').addEventListener('click',toggleBg);
+        };
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div id="box1" class="bluebox">
+            <div id="box2" class="bluebox">
+                <div id="box3" class="bluebox">
+                    <div id="box4" class="bluebox">
+                        <div id="box5" class="bluebox">
+                            <span>&nbsp;</span>
+                        </div>
+                        <span>&nbsp;</span>
+                    </div>
+                    <span>&nbsp;</span>
+                </div>
+                <span>&nbsp;</span>
+            </div>
+            <span>&nbsp;</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+//@import 'reset.less';
+
+#content {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+
+//~: 문자열 아님
+//@{변수}: 문자열 출력
+.box-loop (@boxWidth, @maincolor, @nextSelectorStr, @orgSelectorStr) when (@boxWidth >= 50) {
+  @leftMargin: 40;
+  @topMargin: 40;
+  @selector: ~'@{nextSelectorStr}';
+  @opacity:(@boxWidth/100)+5;
+  @{selector}{
+    width: ~'@{boxWidth}px';
+    line-height: ~'@{boxWidth}px';
+    background-color: fade(@maincolor,@opacity);
+    vertical-align: text-bottom;
+    position: absolute;
+    margin-top: ~'@{topMargin}px';
+    margin-left: ~'@{leftMargin}px';
+  }
+  @nextWidth: @boxWidth - (@leftMargin + @topMargin);
+  @nextSpetSelectorStr: '@{nextSelectorStr}>@{orgSelectorStr}';
+  .box-loop(@nextWidth, @maincolor, @nextSpetSelectorStr, @orgSelectorStr);
+}
+
+.box-loop(@boxWidth:400,@maincolor:blue,@nextSelectorStr:".bluebox",@orgSelectorStr:".bluebox");

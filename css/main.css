@@ -1,0 +1,52 @@
+#content {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+.bluebox {
+  width: 400px;
+  line-height: 400px;
+  background-color: rgba(0, 0, 255, 0.09);
+  vertical-align: text-bottom;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.bluebox>.bluebox {
+  width: 320px;
+  line-height: 320px;
+  background-color: rgba(0, 0, 255, 0.082);
+  vertical-align: text-bottom;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.bluebox>.bluebox>.bluebox {
+  width: 240px;
+  line-height: 240px;
+  background-color: rgba(0, 0, 255, 0.074);
+  vertical-align: text-bottom;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.bluebox>.bluebox>.bluebox>.bluebox {
+  width: 160px;
+  line-height: 160px;
+  background-color: rgba(0, 0, 255, 0.066);
+  vertical-align: text-bottom;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.bluebox>.bluebox>.bluebox>.bluebox>.bluebox {
+  width: 80px;
+  line-height: 80px;
+  background-color: rgba(0, 0, 255, 0.058);
+  vertical-align: text-bottom;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+/*# sourceMappingURL=main.css.map */
